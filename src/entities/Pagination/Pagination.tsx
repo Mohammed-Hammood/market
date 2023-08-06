@@ -10,7 +10,7 @@ type Props = {
 
 const Pagination = ({ totalPages, setCurrentPage, currentPage }: Props) => {
 
-	const pages: number[] = Array.from({ length: totalPages }, (v: unknown, i: number) => i + 1);
+	const pages: number[] = Array.from({ length: totalPages }, (_: unknown, index: number) => index + 1);
 
 	return (
 		<div className={styles.pagination}>
