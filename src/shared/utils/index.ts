@@ -1,5 +1,3 @@
-// const baseURL = "http://localhost:5000/api";
-// const baseURL = "https://dummyjson.com";
 const baseURL = "https://mohammed-api.vercel.app/api";
 
 type Params = {

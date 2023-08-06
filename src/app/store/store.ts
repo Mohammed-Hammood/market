@@ -51,4 +51,4 @@ $products
 
 $limit.on(setLimit.doneData, (_, data) => data);
 
-$query.on(setQuery.done, (state:string, payload)=> payload.result);
+$query.on(setQuery.done, (_, payload)=> payload.result);
