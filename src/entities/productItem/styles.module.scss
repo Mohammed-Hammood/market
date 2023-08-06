@@ -5,7 +5,6 @@
     display: flex;
     flex-direction: column;
     grid-gap:10px;
-   
     &:hover {
         z-index: 1;
         img {
@@ -14,6 +13,7 @@
         }
     }
 }
+
 
 .title {
     overflow: hidden;
@@ -30,10 +30,14 @@
     font-family: 'Montserrat-Bold';
 }
 
-.thumbGood {
+.Thumbnail {
     width: var(--productItemWidth);
     height: var(--productItemWidth);
     border: 1px solid #D7D7D7; 
     border-radius: 5px;
     object-fit: cover;
+}
+
+.DarkThemeBorder {
+    border: 1px solid #0B0B0B; 
 }

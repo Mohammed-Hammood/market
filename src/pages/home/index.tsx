@@ -64,6 +64,7 @@ const HomePage = (): JSX.Element => {
                         products.map((item) => {
                             return (
                                 <ProductItem
+                                    theme={theme}
                                     product={item}
                                     setProduct={setActiveProduct}
                                     key={item.id}
