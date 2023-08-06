@@ -42,12 +42,10 @@ const HomePage = (): JSX.Element => {
                         setUrl={setUrl}
                         category={category}
                         setValue={setQuery}
-                        theme={theme}
                     />
                     <Categories
                         query={query}
                         limit={limit}
-                        theme={theme}
                         setUrl={setUrl}
                         category={category}
                         setCategory={setCategory}
