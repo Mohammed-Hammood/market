@@ -13,6 +13,7 @@ import LimitSelector from "@/shared/ui/SelectNumber/SelectNumber";
 import { ThemeContext } from "@/app/providers/ThemeProvider/ThemeProvider";
 
 
+
 const HomePage = (): JSX.Element => {
     const { theme } = useContext(ThemeContext);
     const [category, setCategory] = useState<string>('all');
