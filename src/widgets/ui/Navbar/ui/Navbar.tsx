@@ -10,7 +10,7 @@ export const Navbar = (): JSX.Element => {
 
 	return (
 		<header className={styles.Header}>
-			<nav className={clsx(styles.Navbar,  {[styles.DarkTheme]: theme === Theme.DARK } )}>
+			<nav className={(styles.Navbar)}>
 				<h1 className={clsx(styles.Logo, {[styles.LogoDark]: theme === Theme.DARK })}>Market</h1>
 				<button
 					className={styles.ThemeButton}

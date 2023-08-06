@@ -1,8 +1,6 @@
 import { Endpoints } from '@/shared/utils';
 import styles from './SelectNumber.module.scss';
-import clsx from 'clsx';
-import { Theme, ThemeContext } from '@/app/providers/ThemeProvider/ThemeProvider';
-import { useContext } from 'react';
+
 
 type Props = {
     limit: number;
@@ -13,7 +11,6 @@ type Props = {
 }
 
 const LimitSelector = ({ limit, setLimit, setUrl, category, query }: Props) => {
-    const { theme } = useContext(ThemeContext);
     const changeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
         let newLimit = parseInt(e.target.value);
 
@@ -25,7 +22,7 @@ const LimitSelector = ({ limit, setLimit, setUrl, category, query }: Props) => {
     return (
         <div className={(styles.selectWrapper)}>
             <select
-                className={clsx(styles.selectNumber, { "DarkThemeBorder": theme === Theme.DARK } )}
+                className={styles.selectNumber}
                 value={limit}
                 onChange={changeHandler}
             >

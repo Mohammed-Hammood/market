@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Input.module.scss';
-import { Theme } from '@/app/providers/ThemeProvider/ThemeProvider';
 import clsx from 'clsx';
 import ICON from '@/shared/ui/Icons';
 import { Endpoints } from '@/shared/utils';
@@ -9,12 +8,11 @@ type Props = {
     value: string;
     setValue: (value: string) => void;
     setUrl: (value: string | null) => void;
-    theme: Theme;
     limit: number;
     category: string;
 }
 
-const SearchInput = ({ limit, setUrl, category, theme, value, setValue }: Props) => {
+const SearchInput = ({ limit, setUrl, category,   value, setValue }: Props) => {
 
     const isValid = (value: string): boolean => (/^[a-zA-Z0-9 ]*$/).test(value);
 
@@ -33,7 +31,7 @@ const SearchInput = ({ limit, setUrl, category, theme, value, setValue }: Props)
     }
     return (
         <form onSubmit={SubmitHandler} className={styles.Form}>
-            <div className={clsx(styles.Wrapper, { "DarkThemeBorder": theme === Theme.DARK })}>
+            <div className={(styles.Wrapper)}>
                 <input
                     title='Filter products by typing (Only lantin numbers, spaces, numbers are allowed)'
                     type={"search"}

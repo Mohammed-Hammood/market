@@ -5,22 +5,28 @@
     --controls-color: #868686;
     --controlsPanelGap: 22px;
     --borderColor: #E1E1E1;
-    --darkTheme: #1E1E1E;
-    --lightTheme: white;
     --productItemWidth: 182px;
     --productItemHeight: 232px;
-    --borderColorDarkTheme: #444; 
     color-scheme: light dark;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
-    --smallDeviceWidth: 767px;
+    --body-color: black;
+    --bg-body:  #FFFFFF;
+    --productImageBorder: #D7D7D7;
 }
 
 @media screen and (max-width: 500px) {
     :root {
         --productItemWidth: 172px;
     }
+}
+
+[data-theme="dark"]{
+    --bg-body: #1E1E1E;
+    --color-body: white;
+    --borderColor: #444;
+    --productImageBorder: #0B0B0B;
 }

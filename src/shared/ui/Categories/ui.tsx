@@ -1,7 +1,5 @@
 import { Endpoints } from '@/shared/utils';
 import styles from './Select.module.scss';
-import clsx from 'clsx';
-import { Theme } from '@/app/providers/ThemeProvider/ThemeProvider';
 
 type Props = {
     category: string;
@@ -9,10 +7,9 @@ type Props = {
     setUrl: (value: string | null) => void;
     limit: number;
     query: string;
-    theme: Theme
 }
 
-const Categories = ({ theme, category, setCategory, setUrl, limit, query }: Props): JSX.Element => {
+const Categories = ({ category, setCategory, setUrl, limit, query }: Props): JSX.Element => {
 
     const changeHandler = (e: React.ChangeEvent<HTMLSelectElement>): void => {
 
@@ -27,7 +24,7 @@ const Categories = ({ theme, category, setCategory, setUrl, limit, query }: Prop
     return (
         <div className={styles.selectWrapper}>
             <select
-                className={clsx(styles.Select, { "DarkThemeBorder": theme === Theme.DARK })}
+                className={styles.Select}
                 value={category}
                 onChange={changeHandler}
             >

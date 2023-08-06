@@ -14,7 +14,9 @@
     box-sizing: border-box;
     max-width: 100%;
     text-decoration: none;
-
+    scrollbar-color: black white;
+    scrollbar-width: 3px;
+    transition: background .5s ease-in-out, color  2s ease-in-out, border 2s ease-in-out;
 }
 
 html {
@@ -23,53 +25,10 @@ html {
 
 body {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background: var(--bg-body);
+    color: var(--color-body);
 }
 
-@keyframes DARK_TO_LIGHT {
-    from {
-        background: var(--darkTheme);
-        color: #FFFFFF;
-    }
-
-    to {
-        background: var(--lightTheme);
-        color: black;
-    }
-}
-
-@keyframes LIGHT_TO_DARK {
-    from {
-        background: var(--lightTheme);
-        color: black;
-    }
-
-    to {
-        background: var(--darkTheme);
-        color: #FFFFFF;
-    }
-}
-
-.themeContainer {
-    min-height: 100vmin;
-    position: fixed;
-    overflow: auto;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.dark {
-    background: var(--darkTheme);
-    animation: .5s LIGHT_TO_DARK linear 1;
-    color: #FFFFFF;
-}
-
-.light {
-    background: var(--lightTheme);
-    animation: .5s DARK_TO_LIGHT linear 1;
-    color: black;
-}
 
 h1 {
     font-size: 3.2em;
@@ -84,24 +43,4 @@ a {
 main {
     margin-top: var(--navbar-height);
     height: calc(100% - var(--navbar-height));
-}
-
-
-.DarkThemeBorder {
-    border: 1px solid var(--borderColorDarkTheme);
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-
-    a:hover {
-        color: #747bff;
-    }
-
-    button {
-        background-color: #f9f9f9;
-    }
 }

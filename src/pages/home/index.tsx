@@ -4,7 +4,7 @@ import SearchInput from '@/shared/ui/Input/Input';
 import { useContext, useEffect, useState } from 'react';
 import { $products, fetchProducts, $limit, $query, setQuery, setLimit } from '@/app/store/store';
 import { Product } from "@/entities/CardsGallary/model/types/types";
-import ProductItem from "@/entities/productItem/ui";
+import ProductItem from "@/entities/product/ui";
 import { Modal } from "@/shared/ui/modal";
 import { Loader } from "@/shared/ui/loader";
 import Categories from "@/shared/ui/Categories/ui";

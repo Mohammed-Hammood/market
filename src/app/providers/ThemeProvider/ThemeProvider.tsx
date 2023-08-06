@@ -1,14 +1,13 @@
-import clsx from 'clsx';
 import { createContext, useState, ReactNode } from 'react';
 
-const LOCAL_STORAGE_THEME_KEY = 'theme';
+const __LocalStorageName__ = 'theme';
 
 export enum Theme {
     LIGHT = 'light',
     DARK = 'dark',
 }
 
-const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
+const defaultTheme = localStorage.getItem(__LocalStorageName__) as Theme || Theme.LIGHT;
 
 
 export interface ThemeContextProps {
@@ -19,17 +18,20 @@ export interface ThemeContextProps {
 export const ThemeContext = createContext<ThemeContextProps>({ theme: Theme.LIGHT, themeToggle: () => { } });
 
 
-
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     const [theme, setTheme] = useState<Theme>(defaultTheme);
+
+    if(localStorage) {
+        document.body.setAttribute("data-theme", theme);
+    }
 
     const themeToggle = () => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
         
         if (setTheme) setTheme(newTheme);
         
-        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+        localStorage.setItem(__LocalStorageName__, newTheme);
     };
 
     const defaultValues = {
@@ -39,9 +41,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     return (
         <ThemeContext.Provider value={defaultValues}>
-            <div className={clsx(theme, "themeContainer")}>
                 {children}
-            </div>
         </ThemeContext.Provider>
     );
 };
