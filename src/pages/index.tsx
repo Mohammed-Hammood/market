@@ -10,4 +10,4 @@ import HomePage from "./home";
     );
 };
 
-export default Routing;
+export default Routing; 
