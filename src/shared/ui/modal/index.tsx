@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { createPortal } from "react-dom";
 import styles from "./styles.module.scss";
 import { Product } from "@/entities/CardsGallary/model/types/types";
 import clsx from "clsx";
 import ICON from "@/shared/ui/Icons";
+import { ThemeContext } from "@/app/providers/ThemeProvider/ThemeProvider";
 
 
 type ModalProps = {
@@ -17,7 +18,7 @@ type ModalProps = {
 export function Modal({ isVisible, hideModal, product, products, setActiveProduct }: ModalProps): JSX.Element | null {
     const [container, setContainer] = useState<HTMLDivElement | null>(null);
     const [activeImage, setActiveImage] = useState<string>(product && product.images[0] ? product.images[0] : '');
-
+    const { theme } = useContext(ThemeContext)
     const nextProduct = ((): null | Product => {
         const currentProductIndex = products.findIndex(item => product && item.id === product.id)
         if (currentProductIndex !== -1 && products[currentProductIndex + 1]) {
@@ -41,7 +42,7 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
         if (el.id.toString() === 'modalContainer') hideModal();
     }
     const forms = <div className={styles.modal} onClick={handleModalHide} id="modalContainer">
-        <div className={styles.modalContent}>
+        <div className={clsx(styles.modalContent, [theme])}>
             <div className={styles.Header}>
                 <div className={styles.NextPreviButtonsContainer}>
                     <button
@@ -67,7 +68,7 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
                     </button>
                 </div>
                 <button className={styles.HeaderCloseBtn} onClick={() => hideModal()}>
-                    <ICON name="xmark-solid" color="white" height="16px"/>
+                    <ICON name="xmark-solid" color="white" height="16px" />
                 </button>
             </div>
             <div className={styles.Body}>
@@ -111,7 +112,7 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
 
         return () => {
             document.body.removeChild(div);
-            document.body.style.overflowY = "auto"; 
+            document.body.style.overflowY = "auto";
         }
 
     }, [])

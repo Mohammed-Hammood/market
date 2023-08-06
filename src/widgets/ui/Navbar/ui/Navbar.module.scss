@@ -18,7 +18,7 @@
     height: 100%;
     z-index: 100;
     width: 100%;
-  
+
 }
 
 .Logo {
@@ -31,14 +31,24 @@
 }
 
 .ThemeButton {
-    background:transparent;
-    outline:none;
-    padding:0;
-    &:active, &:hover {
-        outline:none;
-        border:none;
-        margin:0;
-        background:transparent;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &:active,
+    &:hover {
+        outline: none;
+        border: none;
+        margin: 0;
+        background: transparent;
+    }
+    &:active {
+        transform: scaleX(1.05);
     }
 }
 
