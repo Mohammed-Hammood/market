@@ -1,0 +1,41 @@
+.Select {
+    background: transparent;
+    border: 1px solid var(--borderColor);
+    border-radius: 4px; 
+    outline: none;
+    color: var(--controls-color);
+    cursor: pointer;
+
+    display: flex;
+    height: 48px;
+    padding: 0px 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+    align-self: stretch;
+
+    &:focus {
+        outline: none;
+    }
+
+ 
+    width: 100%;
+    min-height: 32px;
+    appearance: none;
+    padding-left: 2%;
+}
+
+ 
+
+.selectWrapper {
+    width: 100%;
+    max-width: calc(var(--productItemWidth) * 2 + var(--controlsPanelGap));
+    @media screen and (max-width: 767px) {
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        margin: var(--cell-margin) 0;
+    }
+}

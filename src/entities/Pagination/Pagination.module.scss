@@ -1,0 +1,26 @@
+.pagination {
+    height: 40px;
+    gap:10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.pageBtn, .currentPage{
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    background:transparent;
+    width:38px;
+    &:active {
+        transform: scale(1.1);
+    }
+    &:hover {
+        background:rgb(249, 249, 249);
+        color:black;
+    }
+}
+.currentPage {
+    color: red;
+}

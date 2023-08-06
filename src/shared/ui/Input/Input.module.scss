@@ -1,0 +1,51 @@
+.Wrapper {
+    display: flex;
+    width: 100%;
+    border: 1px solid var(--borderColor);
+    border-radius: 4px;
+    overflow: hidden;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+}
+
+.SearchButton {
+    width: 24px;
+    position: absolute;
+    background: transparent;
+    height: 40px;
+    margin-right: 5px;
+
+    &:active {
+        transform: scale(1.05);
+    }
+}
+
+.Input {
+    background: transparent;
+    color: var(--controls-color);
+    display: flex;
+    height: 48px;
+    padding: 0px 12px;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+
+    &:focus {
+        outline: none;
+
+    }
+
+    width: 100%;
+
+}
+
+
+.error {
+    color: red;
+    font-size: 10px;
+}

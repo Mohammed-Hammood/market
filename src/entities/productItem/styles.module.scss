@@ -1,0 +1,39 @@
+.Product {
+    border-radius: 5px;
+    // width: var(--productItemWidth);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    grid-gap:10px;
+   
+    &:hover {
+        z-index: 1;
+        img {
+            transform: scale(1.1);
+            transition: .3s;
+        }
+    }
+}
+
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--primary-color);
+    font-weight: 400;
+    font-family: 'Montserrat';
+}
+
+.price {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-family: 'Montserrat-Bold';
+}
+
+.thumbGood {
+    width: var(--productItemWidth);
+    height: var(--productItemWidth);
+    border: 1px solid #D7D7D7; 
+    border-radius: 5px;
+    object-fit: cover;
+}

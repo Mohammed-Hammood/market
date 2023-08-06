@@ -1,0 +1,97 @@
+@import "variables.scss";
+
+*,
+*::after,
+*::before {
+    border: none;
+    outline: none;
+    padding: 0;
+    font-family: inherit;
+    color: inherit;
+    background: transparent;
+    font-family: inherit;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+    text-decoration: none;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+#__app {
+    width: 100%;
+    min-height: calc(100vh);
+}
+
+
+@keyframes DARK_TO_LIGHT {
+    from {
+        background: var(--darkTheme);
+        color:#FFFFFF;
+    }
+    to {
+        background: var(--lightTheme);
+        color:black;
+    }
+}
+
+@keyframes LIGHT_TO_DARK {
+    from {
+        background: var(--lightTheme);
+        color:black;
+    }
+    to {
+        background: var(--darkTheme);
+        color:#FFFFFF;
+    }
+}
+.dark {
+    background: var(--darkTheme); 
+    animation: .5s LIGHT_TO_DARK linear 1;
+    color:#FFFFFF;
+}
+.light {
+    background: var(--lightTheme); 
+    animation: .5s DARK_TO_LIGHT linear 1;
+    color:black;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+button, a {
+    cursor: pointer;    
+}
+main {
+    margin-top: 46px;
+    height: 100%;
+}
+
+
+.DarkThemeBorder {
+    border:1px solid var(--borderColorDarkTheme);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    button {
+        background-color: #f9f9f9;
+    }
+}

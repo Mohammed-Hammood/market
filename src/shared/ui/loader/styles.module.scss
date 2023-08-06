@@ -1,0 +1,22 @@
+@keyframes LOADER {
+    0% {
+        background: linear-gradient(to bottom, silver, #D7D7D7);
+        opacity: 1;
+    }
+    
+    50% {
+        background: linear-gradient(to bottom, silver, silver);
+        opacity: .8;
+    }
+    100% {
+        background: linear-gradient(to bottom, silver, #D7D7D7);
+        opacity: 1;
+    }
+}
+
+.Loader {
+    width: var(--productItemWidth);
+    height: 247px;
+    border-radius: 5px;
+    animation: LOADER 1s linear infinite;
+}

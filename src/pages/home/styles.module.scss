@@ -1,0 +1,38 @@
+.homePage {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.controllPanel {
+    display: flex;
+    height: 46px;
+    justify-content: center;
+    align-items: center;
+    gap: var(--controlsPanelGap);
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1202px;
+    gap: 20px;
+}
+
+.ProductsList {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(var(--productItemWidth), 1fr));
+    grid-gap: 22px;
+
+    @media (max-width:400px) {
+        grid-gap: 10px;
+
+    }
+}
