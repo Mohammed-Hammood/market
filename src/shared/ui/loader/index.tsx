@@ -5,7 +5,7 @@ type Props = {
 }
 
 export function Loader({ productsNumber }: Props): JSX.Element {
-    const items: number[] = Array.from({ length: productsNumber }, (v: unknown, k: number) => k);
+    const items: number[] = Array.from({ length: productsNumber }, (_: unknown, k: number) => k);
 
     return (<>
         {items.map((item: number) => {
