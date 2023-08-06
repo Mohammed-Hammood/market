@@ -32,7 +32,7 @@ const SearchInput = ({ limit, setUrl, category, theme, value, setValue }: Props)
         }
     }
     return (
-        <form onSubmit={SubmitHandler}>
+        <form onSubmit={SubmitHandler} className={styles.Form}>
             <div className={clsx(styles.Wrapper, { "DarkThemeBorder": theme === Theme.DARK })}>
                 <input
                     title='Filter products by typing (Only lantin numbers, spaces, numbers are allowed)'

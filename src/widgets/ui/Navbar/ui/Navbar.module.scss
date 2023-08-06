@@ -18,16 +18,22 @@
     height: 100%;
     z-index: 100;
     width: 100%;
+    backdrop-filter:blur(10px);
 
 }
 
-.Logo {
+.Logo,
+.LogoDark {
     color: #444;
     font-family: Montserrat;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.LogoDark {
+    color:white;
 }
 
 .ThemeButton {
@@ -47,6 +53,7 @@
         margin: 0;
         background: transparent;
     }
+
     &:active {
         transform: scaleX(1.05);
     }

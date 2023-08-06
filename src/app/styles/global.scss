@@ -25,42 +25,50 @@ body {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-#__app {
-    width: 100%;
-    min-height: calc(100vh);
-}
-
-
 @keyframes DARK_TO_LIGHT {
     from {
         background: var(--darkTheme);
-        color:#FFFFFF;
+        color: #FFFFFF;
     }
+
     to {
         background: var(--lightTheme);
-        color:black;
+        color: black;
     }
 }
 
 @keyframes LIGHT_TO_DARK {
     from {
         background: var(--lightTheme);
-        color:black;
+        color: black;
     }
+
     to {
         background: var(--darkTheme);
-        color:#FFFFFF;
+        color: #FFFFFF;
     }
 }
-.dark {
-    background: var(--darkTheme); 
-    animation: .5s LIGHT_TO_DARK linear 1;
-    color:#FFFFFF;
+
+.themeContainer {
+    min-height: 100vmin;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
+
+.dark {
+    background: var(--darkTheme);
+    animation: .5s LIGHT_TO_DARK linear 1;
+    color: #FFFFFF;
+}
+
 .light {
-    background: var(--lightTheme); 
+    background: var(--lightTheme);
     animation: .5s DARK_TO_LIGHT linear 1;
-    color:black;
+    color: black;
 }
 
 h1 {
@@ -68,17 +76,19 @@ h1 {
     line-height: 1.1;
 }
 
-button, a {
-    cursor: pointer;    
+button,
+a {
+    cursor: pointer;
 }
+
 main {
-    margin-top: 46px;
-    height: 100%;
+    margin-top: var(--navbar-height);
+    height: calc(100% - var(--navbar-height));
 }
 
 
 .DarkThemeBorder {
-    border:1px solid var(--borderColorDarkTheme);
+    border: 1px solid var(--borderColorDarkTheme);
 }
 
 @media (prefers-color-scheme: light) {

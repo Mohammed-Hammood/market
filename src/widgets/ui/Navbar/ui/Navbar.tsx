@@ -10,8 +10,8 @@ export const Navbar = (): JSX.Element => {
 
 	return (
 		<header className={styles.Header}>
-			<nav className={clsx(styles.Navbar, [theme],  {[styles.DarkTheme]: theme === Theme.DARK } )}>
-				<h1 className={clsx(styles.Logo, [theme])}>Market</h1>
+			<nav className={clsx(styles.Navbar,  {[styles.DarkTheme]: theme === Theme.DARK } )}>
+				<h1 className={clsx(styles.Logo, {[styles.LogoDark]: theme === Theme.DARK })}>Market</h1>
 				<button
 					className={styles.ThemeButton}
 					onClick={themeToggle}
