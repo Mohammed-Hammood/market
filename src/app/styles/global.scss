@@ -16,7 +16,11 @@
     text-decoration: none;
     scrollbar-color: black white;
     scrollbar-width: 3px;
-    transition: background .5s ease-in-out, color  2s ease-in-out, border 2s ease-in-out;
+    transition: background .5s ease-in-out, 
+    color  2s ease-in-out, 
+    border 2s ease-in-out, 
+    max-width 1s ease-in-out,
+    height 1s ease-in-out;
 }
 
 html {

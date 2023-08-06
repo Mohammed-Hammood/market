@@ -17,6 +17,7 @@ type ModalProps = {
 
 export function Modal({ isVisible, hideModal, product, products, setActiveProduct }: ModalProps): JSX.Element | null {
     const [container, setContainer] = useState<HTMLDivElement | null>(null);
+    const [fullScreen, setFullscreen] = useState<boolean>(false);
     const [activeImage, setActiveImage] = useState<string>(product && product.images[0] ? product.images[0] : '');
     const { theme } = useContext(ThemeContext)
     const nextProduct = ((): null | Product => {
@@ -41,7 +42,12 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
         const el = e.target as HTMLElement
         if (el.id.toString() === 'modalContainer') hideModal();
     }
-    const forms = <div className={styles.modal} onClick={handleModalHide} id="modalContainer">
+    const forms = <div
+        className={styles.modal}
+        data-fullscreen={fullScreen}
+        onClick={handleModalHide}
+        id="modalContainer"
+    >
         <div className={clsx(styles.modalContent, [theme])}>
             <div className={styles.Header}>
                 <div className={styles.NextPreviButtonsContainer}>
@@ -67,9 +73,14 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
                         Next
                     </button>
                 </div>
-                <button className={styles.HeaderCloseBtn} onClick={() => hideModal()}>
-                    <ICON name="xmark-solid" color="white" height="16px" />
-                </button>
+                <div className={styles.FullscreenCloseButtons}>
+                    <button className={styles.FullScreenBtn} onClick={() => setFullscreen(!fullScreen)}>
+                        <ICON name={fullScreen ? "compress-solid": "expand-solid"} color="silver" height="16px" />
+                    </button>
+                    <button className={styles.HeaderCloseBtn} onClick={() => hideModal()}>
+                        <ICON name="xmark-solid" color="white" height="16px" />
+                    </button>
+                </div>
             </div>
             <div className={styles.Body}>
                 <div className={styles.title}>{product.title}</div>

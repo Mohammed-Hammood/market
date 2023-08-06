@@ -16,6 +16,13 @@
     --body-color: black;
     --bg-body:  #FFFFFF;
     --productImageBorder: #D7D7D7;
+    --modalMaxWidth: 600px;
+    --modalHeight:fit-content;
+    --modalBorderRadius: 5px;
+    --modalPosition: relative;
+    --modalActiveImageMaxHeight:400px;
+    --modalOverflowY:hidden;
+    --modalPadding: 10px;
 }
 
 @media screen and (max-width: 500px) {
@@ -29,4 +36,14 @@
     --color-body: white;
     --borderColor: #444;
     --productImageBorder: #0B0B0B;
+}
+
+[data-fullscreen="true"]{
+    --modalPadding:0;
+    --modalBorderRadius:0;
+    --modalMaxWidth: 100%;
+    --modalHeight: 100%;
+    --modalOverflowY:auto;
+    --modalPosition: fixed;
+    --modalActiveImageMaxHeight:700px;
 }
