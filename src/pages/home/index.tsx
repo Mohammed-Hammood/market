@@ -38,6 +38,9 @@ const HomePage = (): JSX.Element => {
                 <div className={styles.controllPanel}>
                     <SearchInput
                         value={query}
+                        limit={limit}
+                        setUrl={setUrl}
+                        category={category}
                         setValue={setQuery}
                         theme={theme}
                     />
@@ -72,7 +75,6 @@ const HomePage = (): JSX.Element => {
                             )
                         })}
                 </div>
-
             </div>
             {activeProduct ?
                 <Modal
