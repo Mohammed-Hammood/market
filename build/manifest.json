@@ -1,0 +1,26 @@
+{
+  "index.css": {
+    "file": "static/css/index-1ce0aa06.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "assets": [
+      "static/img/theme-dark-74ff25a9.svg",
+      "static/img/theme-light-1f259b0a.svg"
+    ],
+    "css": [
+      "static/css/index-1ce0aa06.css"
+    ],
+    "file": "static/js/index-34f8573b.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "src/shared/assets/icons/theme-dark.svg": {
+    "file": "static/img/theme-dark-74ff25a9.svg",
+    "src": "src/shared/assets/icons/theme-dark.svg"
+  },
+  "src/shared/assets/icons/theme-light.svg": {
+    "file": "static/img/theme-light-1f259b0a.svg",
+    "src": "src/shared/assets/icons/theme-light.svg"
+  }
+}
