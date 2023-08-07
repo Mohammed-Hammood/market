@@ -45,9 +45,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    img {
+    img, img:hover, img:active, img:focus {
         height: 28px;
         width:59px;
+        user-select: none;
         overflow: hidden;
         border-radius: 15px;
     }
