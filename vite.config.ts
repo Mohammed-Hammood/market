@@ -8,9 +8,10 @@ export default defineConfig({
 
 	build: {
 		outDir: path.resolve(__dirname, 'build'),
-		manifest: true,
+		manifest:true,
 		rollupOptions: {
 			output: {
+				
 				assetFileNames: (assetInfo) => {
 
 					//split the filename and get the last element (the file extension)
@@ -34,7 +35,7 @@ export default defineConfig({
 
 				//Set output.entryFileNames to configure the index.js filename.
 				entryFileNames: 'static/js/[name]-[hash].js',
-			}
+			},
 		}
 	},
 	resolve: {

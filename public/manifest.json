@@ -1,0 +1,40 @@
+{
+    "name": "Market",
+    "short_name": "Market",
+    "orientation": "portrait",
+    "theme_color": "#1E1E1E",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": ".",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        }
+    ],
+    "index.css": {
+        "file": "static/css/index-5dd024f1.css",
+        "src": "index.css"
+    },
+    "index.html": {
+        "assets": [
+            "static/img/theme-dark-74ff25a9.svg",
+            "static/img/theme-light-1f259b0a.svg"
+        ],
+        "css": [
+            "static/css/index-5dd024f1.css"
+        ],
+        "file": "static/js/index-ea65be1d.js",
+        "isEntry": true,
+        "src": "index.html"
+    },
+    "src/shared/assets/icons/theme-dark.svg": {
+        "file": "static/img/theme-dark-74ff25a9.svg",
+        "src": "src/shared/assets/icons/theme-dark.svg"
+    },
+    "src/shared/assets/icons/theme-light.svg": {
+        "file": "static/img/theme-light-1f259b0a.svg",
+        "src": "src/shared/assets/icons/theme-light.svg"
+    }
+}

@@ -1,6 +1,6 @@
 {
   "index.css": {
-    "file": "static/css/index-1ce0aa06.css",
+    "file": "static/css/index-5dd024f1.css",
     "src": "index.css"
   },
   "index.html": {
@@ -9,9 +9,9 @@
       "static/img/theme-light-1f259b0a.svg"
     ],
     "css": [
-      "static/css/index-1ce0aa06.css"
+      "static/css/index-5dd024f1.css"
     ],
-    "file": "static/js/index-34f8573b.js",
+    "file": "static/js/index-ea65be1d.js",
     "isEntry": true,
     "src": "index.html"
   },
