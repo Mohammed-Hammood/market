@@ -1,32 +1,33 @@
 import React from 'react';
-import styles from './Input.module.scss';
+import styles from './styles.module.scss';
 import clsx from 'clsx';
 import ICON from '@/shared/ui/Icons';
 import { Endpoints } from '@/shared/utils';
 
 type Props = {
-    value: string;
-    setValue: (value: string) => void;
+    filters: ProductFilters;
+    setFilters: (value: ProductFilters) => void;
     setUrl: (value: string | null) => void;
-    limit: number;
-    category: string;
 }
 
-const SearchInput = ({ limit, setUrl, category,   value, setValue }: Props) => {
+const SearchInput = ({ setUrl, filters, setFilters }: Props) => {
 
     const isValid = (value: string): boolean => (/^[a-zA-Z0-9 ]*$/).test(value);
 
-
     const changeHandler = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>): void => {
-        if (isValid(value)) setValue(value);
+        
+        if (isValid(value)) setFilters({...filters, query:value});
+
     };
 
     const SubmitHandler = (e: React.FormEvent<HTMLFormElement>): void => {
+        
         e.preventDefault();
 
-        if (value.trim().length > 0 && isValid(value)) {
+        if (filters.query.trim().length > 0 && isValid(filters.query)) {
 
-            setUrl(Endpoints.getProducts({ limit, skip: 0, category, query: value.trim() }))
+            setUrl(Endpoints.getProducts(filters));
+
         }
     }
     return (
@@ -35,7 +36,7 @@ const SearchInput = ({ limit, setUrl, category,   value, setValue }: Props) => {
                 <input
                     title='Filter products by typing (Only lantin numbers, spaces, numbers are allowed)'
                     type={"search"}
-                    value={value}
+                    value={filters.query}
                     onChange={changeHandler}
                     className={clsx(styles.Input)}
                     placeholder={"Search"}

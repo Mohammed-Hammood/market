@@ -1,31 +1,31 @@
 import { Endpoints } from '@/shared/utils';
-import styles from './Select.module.scss';
+import styles from './styles.module.scss';
 
 type Props = {
-    category: string;
-    setCategory: (value: string) => void;
+    filters: ProductFilters;
+    setFilters: (value: ProductFilters) => void;
     setUrl: (value: string | null) => void;
-    limit: number;
-    query: string;
 }
 
-const Categories = ({ category, setCategory, setUrl, limit, query }: Props): JSX.Element => {
+const Categories = ({ filters,  setUrl, setFilters }: Props): JSX.Element => {
 
     const changeHandler = (e: React.ChangeEvent<HTMLSelectElement>): void => {
 
-        const newCategory = (e.target as HTMLSelectElement).value;
+        const category = (e.target as HTMLSelectElement).value as Category;
 
-        const url = Endpoints.getProducts({ limit, skip: 0, category: newCategory, query })
+        const url = Endpoints.getProducts({...filters, category})
 
-        setUrl(url)
+        setUrl(url);
 
-        setCategory(newCategory)
+        setFilters({...filters, category});
+
     }
+    
     return (
         <div className={styles.selectWrapper}>
             <select
                 className={styles.Select}
-                value={category}
+                value={filters.category}
                 onChange={changeHandler}
             >
                 <option className={styles.option} value={"all"}>All</option>

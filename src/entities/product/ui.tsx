@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import clsx from 'clsx';
 import { Theme } from '@/app/providers/ThemeProvider/ThemeProvider';
 
-interface ProductProps {
+type ProductProps = {
 	product: Product;
 	theme: Theme;
 	setProduct: (product: Product) => void;

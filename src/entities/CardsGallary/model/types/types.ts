@@ -7,7 +7,7 @@ export interface Product {
   description: string;
   discountPercentage: number;
   rating: number;
-  category: string;
+  category: Category;
   stock: number;
   brand: string;
 }

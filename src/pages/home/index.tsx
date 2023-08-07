@@ -2,24 +2,22 @@ import styles from "./styles.module.scss";
 import { useStore } from "effector-react";
 import SearchInput from '@/shared/ui/Input/Input';
 import { useContext, useEffect, useState } from 'react';
-import { $products, fetchProducts, $limit, $query, setQuery, setLimit } from '@/app/store/store';
+import { $filters, $products, fetchProducts, setFilters } from '@/app/store/store';
 import { Product } from "@/entities/CardsGallary/model/types/types";
 import ProductItem from "@/entities/product/ui";
 import { Modal } from "@/shared/ui/modal";
 import { Loader } from "@/shared/ui/loader";
 import Categories from "@/shared/ui/Categories/ui";
 import { Endpoints } from "@/shared/utils";
-import LimitSelector from "@/shared/ui/SelectNumber/SelectNumber";
+import LimitSelector from "@/shared/ui/limit/ui";
 import { ThemeContext } from "@/app/providers/ThemeProvider/ThemeProvider";
 
 
 const HomePage = (): JSX.Element => {
     const { theme } = useContext(ThemeContext);
-    const [category, setCategory] = useState<string>('all');
     const products = useStore($products);
-    const query = useStore($query);
-    const limit = useStore($limit);
-    const [url, setUrl] = useState<string | null>(Endpoints.getProducts({ limit, skip: 0, category, query }));
+    const filters = useStore($filters);
+    const [url, setUrl] = useState<string | null>(Endpoints.getProducts(filters));
     const [loading, setLoading] = useState<boolean>(false);
 
     const [activeProduct, setActiveProduct] = useState<null | Product>(null);
@@ -28,39 +26,39 @@ const HomePage = (): JSX.Element => {
 
     useEffect(() => {
 
-        if (url && !loading) fetchData(url)
+        if (url && !loading) fetchData(url);
 
-    }, [limit, category, url, fetchData, loading]);
+    }, [filters, url, fetchData, loading]);
 
     return (
         <main className={styles.homePage}>
             <div className={styles.Container}>
                 <div className={styles.controllPanel}>
                     <SearchInput
-                        value={query}
-                        limit={limit}
-                        setUrl={setUrl}
-                        category={category}
-                        setValue={setQuery}
+                        {...{
+                            filters,
+                            setUrl,
+                            setFilters
+                        }}
                     />
                     <Categories
-                        query={query}
-                        limit={limit}
-                        setUrl={setUrl}
-                        category={category}
-                        setCategory={setCategory}
+                        {...{
+                            filters,
+                            setUrl,
+                            setFilters
+                        }}
                     />
                     <LimitSelector
-                        query={query}
-                        category={category}
-                        limit={limit}
-                        setLimit={setLimit}
-                        setUrl={setUrl}
+                        {...{
+                            filters,
+                            setUrl,
+                            setFilters
+                        }}
                     />
                 </div>
                 <div className={styles.ProductsList}>
                     {loading ?
-                        <Loader productsNumber={limit} />
+                        <Loader productsNumber={filters.limit} />
                         :
                         products.map((item) => {
                             return (
