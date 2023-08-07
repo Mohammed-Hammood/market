@@ -20,6 +20,10 @@ export default defineConfig({
 					if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extensionType)) {
 						extensionType = 'img';
 					}
+					// tes if the file is a font, then put within css files
+					else if (/ttf|woff|woff2|otf/i.test(extensionType)){
+						extensionType = 'css';
+					}
 
 					return `static/${extensionType}/[name]-[hash][extname]`;
 				},
