@@ -7,13 +7,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 10px;
     z-index: 100;
+    border-bottom: 1px solid var(--borderColor);
 }
 
 .Navbar {
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid var(--borderColor);
+    max-width: var(--maxWidth);
+    justify-content: space-between;
     align-items: center;
     height: 100%;
     z-index: 100;
@@ -23,7 +25,7 @@
 
 .Logo,
 .LogoDark {
-    color: #444;
+    color: #444444;
     font-family: Montserrat;
     font-size: 24px;
     font-style: normal;
@@ -45,7 +47,7 @@
     align-items: center;
     background: transparent;
     overflow: hidden;
-    
+
     &:active,
     &:hover {
         outline: none;

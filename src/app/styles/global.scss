@@ -1,5 +1,27 @@
 @import "variables.scss";
 
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-Regular'),
+        url('@/app/styles/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: local('Montserrat-Bold'),
+        url('@/app/styles/fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'),
+        url('@/app/styles/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: bold;
+}
+
+
 *,
 *::after,
 *::before {
@@ -16,11 +38,11 @@
     max-width: 100%;
     scrollbar-color: black white;
     scrollbar-width: 3px;
-    transition: background .5s ease-in-out, 
-    color  2s ease-in-out, 
-    border 2s ease-in-out, 
-    max-width 1s ease-in-out,
-    height 1s ease-in-out;
+    transition: background .5s ease-in-out,
+        color 2s ease-in-out,
+        border 2s ease-in-out,
+        max-width 1s ease-in-out,
+        height 1s ease-in-out;
 }
 
 html {
@@ -28,23 +50,19 @@ html {
 }
 
 body {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Montserrat, Roboto, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     background: var(--bg-body);
     color: var(--color-body);
 }
 
-
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-}
 
 button,
 a {
     cursor: pointer;
 }
 
-img, picture {
+img,
+picture {
     max-width: 100%;
     user-select: none;
 }
