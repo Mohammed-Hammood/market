@@ -41,7 +41,7 @@ const SearchInput = ({ setUrl, filters, setFilters }: Props) => {
                     className={clsx(styles.Input)}
                     placeholder={"Search"}
                 />
-                <button className={styles.SearchButton} type={'submit'} name='Search'>
+                <button className={styles.SearchButton} type={'submit'} title='Search' aria-label='Search button'>
                     <ICON name="magnifying-glass-solid" color='#868686' />
                 </button>
             </div>
