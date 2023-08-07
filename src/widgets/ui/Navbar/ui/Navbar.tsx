@@ -17,7 +17,7 @@ export const Navbar = (): JSX.Element => {
 					className={styles.ThemeButton}
 					onClick={themeToggle}
 				>
-					<img src={theme === Theme.DARK ? DarkSVG: LightSVG} />
+					<img width={59} height={28} src={theme === Theme.DARK ? DarkSVG: LightSVG} alt=''/>
 				</button>
 			</nav>
 		</header>

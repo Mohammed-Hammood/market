@@ -45,7 +45,12 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
+    img {
+        height: 28px;
+        width:59px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
     &:active,
     &:hover {
         outline: none;
