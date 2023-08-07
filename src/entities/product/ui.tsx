@@ -15,6 +15,7 @@ const ProductItem = ({ product, setProduct, theme }: ProductProps) => {
 		<div className={styles.Product} onClick={() => setProduct(product)}>
 			<img
 				src={product.thumbnail}
+				alt={product.title}
 				className={clsx(styles.Thumbnail, { [styles.DarkThemeBorder]: Theme.DARK === theme })}
 			/>
 			<div className={styles.title}>{product.title}</div>
