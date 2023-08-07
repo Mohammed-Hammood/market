@@ -18,8 +18,7 @@
     height: 100%;
     z-index: 100;
     width: 100%;
-    backdrop-filter:blur(20px);
-    // background: var(--bg-body);
+    backdrop-filter: blur(20px);
 }
 
 .Logo,
@@ -33,35 +32,28 @@
 }
 
 .LogoDark {
-    color:white;
+    color: white;
 }
 
 .ThemeButton {
-    background: transparent;
     outline: none;
-    padding: 0;
-    border-radius: 15px;
     display: flex;
+    width: 59px;
+    height: 28px;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    img, img:hover, img:active, img:focus {
-        height: 28px;
-        width:59px;
-        user-select: none;
-        overflow: hidden;
-        border-radius: 15px;
-    }
+    border-radius: 50px;
+    background: transparent;
+    
     &:active,
     &:hover {
         outline: none;
         border: none;
         margin: 0;
-        background: transparent;
     }
 
     &:active {
         transform: scaleX(1.05);
     }
 }
- 

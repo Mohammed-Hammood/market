@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import styles from './Navbar.module.scss';
+import styles from './styles.module.scss';
 import { Theme, ThemeContext } from '@/app/providers/ThemeProvider/ThemeProvider';
-import DarkSVG from "@/shared/assets/icons/theme-dark.svg";
-import LightSVG from "@/shared/assets/icons/theme-light.svg";
+import ICON from '@/shared/ui/Icons';
 import clsx from 'clsx';
+
 
 export const Navbar = (): JSX.Element => {
 	const { theme, themeToggle } = useContext(ThemeContext);
@@ -11,13 +11,19 @@ export const Navbar = (): JSX.Element => {
 	return (
 		<header className={styles.Header}>
 			<nav className={(styles.Navbar)}>
-				<h1 className={clsx(styles.Logo, {[styles.LogoDark]: theme === Theme.DARK })}>Market</h1>
+				<h1 className={clsx(styles.Logo, { [styles.LogoDark]: theme === Theme.DARK })}>Market</h1>
 				<button
-					title={theme === Theme.DARK ? "Dark mode": "Light mode"}
+					title={theme === Theme.DARK ? "Dark mode" : "Light mode"}
 					className={styles.ThemeButton}
 					onClick={themeToggle}
 				>
-					<img width={59} height={28} src={theme === Theme.DARK ? DarkSVG: LightSVG} alt=''/>
+					<ICON
+						name={theme === Theme.DARK ?  'moon-ellipsis-solid': 'sun-ellipsis-solid'}
+						height='28'
+						width='59'
+						color='none'
+					/>
+
 				</button>
 			</nav>
 		</header>

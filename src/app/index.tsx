@@ -1,4 +1,4 @@
-import { Navbar } from '@/widgets/ui/Navbar';
+import { Navbar } from '@/widgets/ui/Navbar/Navbar';
 import { withProviders } from './providers';
 import Routing from '@/pages';
 import "./index.scss";
