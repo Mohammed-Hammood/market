@@ -1,0 +1,50 @@
+{
+    "manifest_version": 3,
+    "version": "1.0.0",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "name": "Market",
+    "short_name": "Market",
+    "orientation": "portrait",
+    "theme_color": "#1E1E1E",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": ".",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        }
+    ],
+    "index.css": {
+        "file": "static/css/index-a899e9f5.css",
+        "src": "index.css"
+    },
+    "index.html": {
+        "assets": [
+            "static/css/Montserrat-Regular-81ebc391.ttf",
+            "static/css/Montserrat-Bold-c4c8cb57.ttf",
+            "static/css/Roboto-Regular-4e147ab6.ttf"
+        ],
+        "css": [
+            "static/css/index-a899e9f5.css"
+        ],
+        "file": "static/js/index-82f3ee07.js",
+        "isEntry": true,
+        "src": "index.html"
+    },
+    "src/app/styles/fonts/Montserrat-Bold.ttf": {
+        "file": "static/css/Montserrat-Bold-c4c8cb57.ttf",
+        "src": "src/app/styles/fonts/Montserrat-Bold.ttf"
+    },
+    "src/app/styles/fonts/Montserrat-Regular.ttf": {
+        "file": "static/css/Montserrat-Regular-81ebc391.ttf",
+        "src": "src/app/styles/fonts/Montserrat-Regular.ttf"
+    },
+    "src/app/styles/fonts/Roboto-Regular.ttf": {
+        "file": "static/css/Roboto-Regular-4e147ab6.ttf",
+        "src": "src/app/styles/fonts/Roboto-Regular.ttf"
+    }
+}

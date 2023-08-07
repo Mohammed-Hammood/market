@@ -1,6 +1,25 @@
 {
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "name": "Market",
+  "short_name": "Market",
+  "orientation": "portrait",
+  "theme_color": "#1E1E1E",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": ".",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
   "index.css": {
-    "file": "static/css/index-0f507bf6.css",
+    "file": "static/css/index-a899e9f5.css",
     "src": "index.css"
   },
   "index.html": {
@@ -10,9 +29,9 @@
       "static/css/Roboto-Regular-4e147ab6.ttf"
     ],
     "css": [
-      "static/css/index-0f507bf6.css"
+      "static/css/index-a899e9f5.css"
     ],
-    "file": "static/js/index-ac262460.js",
+    "file": "static/js/index-82f3ee07.js",
     "isEntry": true,
     "src": "index.html"
   },
