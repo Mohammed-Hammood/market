@@ -44,6 +44,12 @@ a {
     cursor: pointer;
 }
 
+img, picture {
+    max-width: 100%;
+    user-select: none;
+}
+
+
 main {
     margin-top: var(--navbar-height);
     height: calc(100% - var(--navbar-height));
