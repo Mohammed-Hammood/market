@@ -40,17 +40,18 @@
     display: flex;
     width: 59px;
     height: 28px;
+    border-radius: 50px;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    border-radius: 50px;
     background: transparent;
+    overflow: hidden;
     
     &:active,
     &:hover {
         outline: none;
         border: none;
         margin: 0;
+        user-select: none;
     }
 
     &:active {
