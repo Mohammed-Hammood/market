@@ -1,15 +1,37 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import * as path from "path";
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	// server: {
-	// 	hmr: {
-	// 		overlay: true
-	// 	}
-	// },
+
+	build: {
+		outDir: path.resolve(__dirname, 'build'),
+		rollupOptions: {
+			output: {
+				assetFileNames: (assetInfo) => {
+
+					//split the filename and get the last element (the file extension)
+					let extensionType = assetInfo.name.split('.').at(-1);
+
+
+					//test if the extension is an image type
+					if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extensionType)) {
+						extensionType = 'img';
+					}
+
+					return `static/${extensionType}/[name]-[hash][extname]`;
+				},
+
+				//Set output.chunkFileNames to configure the vendor chunk filenames.
+				chunkFileNames: 'static/js/[name]-[hash].js',
+
+				//Set output.entryFileNames to configure the index.js filename.
+				entryFileNames: 'static/js/[name]-[hash].js',
+			}
+		}
+	},
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),

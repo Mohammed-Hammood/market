@@ -17,8 +17,8 @@ const HomePage = (): JSX.Element => {
     const { theme } = useContext(ThemeContext);
     const products = useStore($products);
     const filters = useStore($filters);
-    const [url, setUrl] = useState<string | null>(Endpoints.getProducts(filters));
     const [loading, setLoading] = useState<boolean>(false);
+    const [url, setUrl] = useState<string | null>(Endpoints.getProducts(filters));
 
     const [activeProduct, setActiveProduct] = useState<null | Product>(null);
 
