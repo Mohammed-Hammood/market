@@ -1,31 +1,18 @@
-import { Endpoints } from '@/shared/utils';
 import styles from './styles.module.scss';
 
-
 type Props = {
-    filters:ProductFilters;
-    setFilters: (value: ProductFilters) => void;
-    setUrl: (value: string | null) => void;
+    setLimit: (value: number) => void;
+    limit: number;
 }
 
-const LimitSelector = ({ setUrl, filters, setFilters}: Props) => {
-    
-    const changeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-
-        const limit = parseInt(e.target.value);
-        
-        setUrl(Endpoints.getProducts({ ...filters, limit }))
-
-        setFilters({...filters, limit});
-        
-    };
+const LimitSelector = ({ setLimit, limit }: Props) => {
 
     return (
         <div className={(styles.selectWrapper)}>
             <select
                 className={styles.selectNumber}
-                value={filters.limit}
-                onChange={changeHandler}
+                value={limit}
+                onChange={e => setLimit(parseInt((e.target as HTMLSelectElement).value))}
             >
                 <option value={10}>10</option>
                 <option value={20}>20</option>

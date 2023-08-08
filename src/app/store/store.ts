@@ -1,4 +1,5 @@
 import { Product } from '@/entities/CardsGallary/model/types/types';
+import { Endpoints } from '@/shared/utils';
 import { createStore, createEffect } from 'effector';
 
 export const $filters = createStore<ProductFilters>({
@@ -14,12 +15,13 @@ export const $products = createStore<Product[]>([]);
 
 
 type Props = {
-	url: string;
 	setLoading: (value: boolean) => void
-	setUrl: (value: string | null) => void;
+	filters: ProductFilters;
 }
 
-export const fetchProducts = createEffect(async ({ url, setLoading, setUrl }: Props) => {
+export const fetchProducts = createEffect(async ({ setLoading, filters }: Props) => {
+	const url = Endpoints.getProducts({...filters, limit: 100});
+
 	try {
 
 		setLoading(true);
@@ -31,7 +33,6 @@ export const fetchProducts = createEffect(async ({ url, setLoading, setUrl }: Pr
 		console.log(err)
 	}
 	finally {
-		setUrl(null);
 		setLoading(false);
 	}
 });

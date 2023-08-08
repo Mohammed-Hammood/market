@@ -8,27 +8,34 @@ import ProductItem from "@/entities/product/ui";
 import { Modal } from "@/shared/ui/modal";
 import { Loader } from "@/shared/ui/loader";
 import Categories from "@/shared/ui/Categories/ui";
-import { Endpoints } from "@/shared/utils";
 import LimitSelector from "@/shared/ui/limit/ui";
 import { ThemeContext } from "@/app/providers/ThemeProvider/ThemeProvider";
 
 
 const HomePage = (): JSX.Element => {
+    const [loading, setLoading] = useState<boolean>(false);
     const { theme } = useContext(ThemeContext);
     const products = useStore($products);
     const filters = useStore($filters);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [url, setUrl] = useState<string | null>(Endpoints.getProducts(filters));
-
+    const { query, category, limit } = filters;
     const [activeProduct, setActiveProduct] = useState<null | Product>(null);
 
-    const fetchData = (url: string) => fetchProducts({ url, setLoading, setUrl });
+    const includes = (value: string): boolean => value.toLowerCase().includes(query.toLowerCase());
+
+    const filteredProducts = products
+        .filter(item =>
+            query.trim().length === 0 ||
+            includes(item.brand) ||
+            includes(item.description) ||
+            includes(item.title)
+        )
+        .filter(item => category === 'all' || item.category === category)
+        .filter((_, index: number) => index < limit)
+
 
     useEffect(() => {
-
-        if (url && !loading) fetchData(url);
-
-    }, [filters, url, fetchData, loading]);
+        fetchProducts({ setLoading, filters })
+    }, []);
 
     return (
         <main className={styles.homePage}>
@@ -36,23 +43,20 @@ const HomePage = (): JSX.Element => {
                 <div className={styles.controllPanel}>
                     <SearchInput
                         {...{
-                            filters,
-                            setUrl,
-                            setFilters
+                            query,
+                            setQuery: (query: string) => setFilters({ ...filters, query })
                         }}
                     />
                     <Categories
                         {...{
-                            filters,
-                            setUrl,
-                            setFilters
+                            category,
+                            setCategory: (category: Category) => setFilters({ ...filters, category }),
                         }}
                     />
                     <LimitSelector
                         {...{
-                            filters,
-                            setUrl,
-                            setFilters
+                            limit,
+                            setLimit: (limit: number) => setFilters({ ...filters, limit })
                         }}
                     />
                 </div>
@@ -60,7 +64,7 @@ const HomePage = (): JSX.Element => {
                     {loading ?
                         <Loader productsNumber={filters.limit} />
                         :
-                        products.map((item) => {
+                        filteredProducts.map((item) => {
                             return (
                                 <ProductItem
                                     theme={theme}
