@@ -10,6 +10,7 @@
   "theme_color": "#1E1E1E",
   "background_color": "#ffffff",
   "display": "standalone",
+  "description": "Online market. Different products",
   "start_url": ".",
   "id": "/",
   "icons": [
@@ -66,5 +67,9 @@
   "src/app/styles/fonts/Roboto-Regular.ttf": {
     "file": "static/css/Roboto-Regular-4e147ab6.ttf",
     "src": "src/app/styles/fonts/Roboto-Regular.ttf"
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
   }
 }

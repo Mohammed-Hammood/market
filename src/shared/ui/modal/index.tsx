@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from "react";
-import { createPortal } from "react-dom";
-import styles from "./styles.module.scss";
 import { Product } from "@/entities/CardsGallary/model/types/types";
-import clsx from "clsx";
-import ICON from "@/shared/ui/Icons";
 import { ThemeContext } from "@/app/providers/ThemeProvider/ThemeProvider";
+import styles from "./styles.module.scss";
+import { createPortal } from "react-dom";
+import ICON from "@/shared/ui/Icons";
+import clsx from "clsx";
 
 
 type ModalProps = {
@@ -42,7 +42,7 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
         const el = e.target as HTMLElement
         if (el.id.toString() === 'modalContainer') hideModal();
     }
-    const forms = <div
+    const form = <div
         className={styles.modal}
         data-fullscreen={fullScreen}
         onClick={handleModalHide}
@@ -129,6 +129,6 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
     }, [])
 
     return (
-        isVisible && container ? createPortal(forms, container) : null
+        isVisible && container ? createPortal(form, container) : null
     )
 }

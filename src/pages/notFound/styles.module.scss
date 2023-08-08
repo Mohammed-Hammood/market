@@ -1,0 +1,16 @@
+.NotFoundPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-body);
+}
+
+.Card {
+    color: var(--color-body);
+    text-align: center;
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
