@@ -1,3 +1,24 @@
+# Market app
+- React app download displays different products,
+- can filter, shows how many products per page, search by title, brand name, or description. 
+- The application can be easily installed on mobile devices.
+- The application deployed on (https://online-market-1.vercel.app)[https://online-market-1.vercel.app]
+
+### Stack
+- `Backend` NodeJs, Express
+- `Frontend` React, TypeScript, Effector
+
+## How to install the application?
+- Clone the application to your locall machine `git clone repository_url`
+- Install the dependances `yarn install`
+- Run the application `yarn dev`
+
+
+## How to install the application on mobile devices?
+- Open the https://online-market-1.vercel.app in your browser and install it from options
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
