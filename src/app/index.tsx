@@ -1,16 +1,6 @@
-import { Navbar } from '@/widgets/ui/Navbar/Navbar';
-import { withProviders } from './providers';
-import Routing from '@/pages';
-import "./index.scss";
+import App from "./app";
+import { withProviders } from "./providers";
 
+const MyApp = withProviders(App);
 
-function App(): JSX.Element {
-	return (
-		<>
-			<Navbar />
-			<Routing />
-		</>
-	)
-}
-
-export default withProviders(App);
+export default MyApp;

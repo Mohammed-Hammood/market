@@ -26,6 +26,6 @@ export default function ICON(props: Props): JSX.Element | null {
         // you can add any svg you want from https://fontawsome.com like above 
     };
 
-    if (ICONS.hasOwnProperty(props.name)) return ICONS[props.name];
+    if (Object.prototype.hasOwnProperty.call(ICONS, props.name)) return ICONS[props.name];
     return null;
-};
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Product } from "@/entities/CardsGallary/model/types/types";
-import { ThemeContext } from "@/app/providers/ThemeProvider/ThemeProvider";
+import { ThemeContext } from "@/app/providers/ThemeProvider";
 import styles from "./styles.module.scss";
 import { createPortal } from "react-dom";
 import ICON from "@/shared/ui/Icons";

@@ -1,7 +1,8 @@
 import { Product } from '@/entities/CardsGallary/model/types/types';
 import styles from './styles.module.scss';
 import clsx from 'clsx';
-import { Theme } from '@/app/providers/ThemeProvider/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
+
 
 type ProductProps = {
 	product: Product;

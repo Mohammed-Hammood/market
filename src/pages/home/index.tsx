@@ -9,7 +9,7 @@ import { Modal } from "@/shared/ui/modal";
 import { Loader } from "@/shared/ui/loader";
 import Categories from "@/shared/ui/Categories/ui";
 import LimitSelector from "@/shared/ui/limit/ui";
-import { ThemeContext } from "@/app/providers/ThemeProvider/ThemeProvider";
+import { ThemeContext } from "@/app/providers/ThemeProvider";
 
 
 const HomePage = (): JSX.Element => {
@@ -34,8 +34,8 @@ const HomePage = (): JSX.Element => {
 
 
     useEffect(() => {
-        fetchProducts({ setLoading, filters })
-    }, []);
+        if(products.length === 0)fetchProducts({ setLoading, filters })
+    }, [filters, products]);
 
     return (
         <main className={styles.homePage}>

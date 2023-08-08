@@ -1,25 +1,12 @@
-import { createContext, useState, ReactNode } from 'react';
-
-const __LocalStorageName__ = 'theme';
-
-export enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark',
-}
-
-const defaultTheme = localStorage.getItem(__LocalStorageName__) as Theme || Theme.LIGHT;
-
-
-export interface ThemeContextProps {
-    theme: Theme;
-    themeToggle: () => void;
-}
-
-export const ThemeContext = createContext<ThemeContextProps>({ theme: Theme.LIGHT, themeToggle: () => { } });
-
+import {  useState, ReactNode } from 'react';
+import { ThemeContext } from './context';
+import { Theme } from '.';
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
+    const __LocalStorageName__ = 'theme';
 
+    const defaultTheme = localStorage.getItem(__LocalStorageName__) as Theme || Theme.LIGHT;
+    
     const [theme, setTheme] = useState<Theme>(defaultTheme);
 
     if(localStorage) {

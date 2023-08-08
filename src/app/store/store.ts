@@ -29,7 +29,7 @@ export const fetchProducts = createEffect(async ({ setLoading, filters }: Props)
 		const res = await req.json();
 		return res;
 	}
-	catch (err: any) {
+	catch (err) {
 		console.log(err)
 	}
 	finally {

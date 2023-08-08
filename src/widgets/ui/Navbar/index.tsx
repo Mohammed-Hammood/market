@@ -1,13 +1,14 @@
 import { useContext } from 'react';
 import styles from './styles.module.scss';
-import { Theme, ThemeContext } from '@/app/providers/ThemeProvider/ThemeProvider';
+import { ThemeContext } from '@/app/providers/ThemeProvider';
 import ICON from '@/shared/ui/Icons';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import { AppRoutes } from '@/shared/routes';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 
-export const Navbar = (): JSX.Element => {
+const Navbar = (): JSX.Element => {
 	const { theme, themeToggle } = useContext(ThemeContext);
 
 	return (
@@ -36,3 +37,5 @@ export const Navbar = (): JSX.Element => {
 		</header>
 	);
 };
+
+export default Navbar;
