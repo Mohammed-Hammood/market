@@ -2,7 +2,7 @@
 - React app download displays different products,
 - can filter, shows how many products per page, search by title, brand name, or description. 
 - The application can be easily installed on mobile devices.
-- The application deployed on (https://online-market-1.vercel.app)[https://online-market-1.vercel.app]
+- The application deployed on [https://online-market-1.vercel.app](https://online-market-1.vercel.app)
 
 ### Stack
 - `Backend` NodeJs, Express
