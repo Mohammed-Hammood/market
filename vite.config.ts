@@ -9,7 +9,10 @@ import manifest from './manifest.json'
 export default defineConfig({
 	plugins: [
 		react(),
-		crx({ manifest }),
+		crx({ manifest, contentScripts: {
+			injectCss:true,
+			preambleCode: "code"
+		} }),
 	],
 
 	build: {
