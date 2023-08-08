@@ -12,27 +12,28 @@
     "display": "standalone",
     "description": "Online market. Different products",
     "id": "/",
+    "start_url": "/",
     "icons": [
         {
-            "src": "/static/img/maskable-16px.png",
+            "src": "https://online-market-1.vercel.app/static/img/maskable-16px.png",
             "sizes": "16x16",
             "type": "image/png",
             "purpuse": "any maskable"
         },
         {
-            "src": "/static/img/maskable-180px.png",
+            "src": "https://online-market-1.vercel.app/static/img/maskable-180px.png",
             "sizes": "180x180",
             "type": "image/png",
             "purpuse": "any maskable"
         },
         {
-            "src": "/static/img/maskable-192px.png",
+            "src": "https://online-market-1.vercel.app/static/img/maskable-192px.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpuse": "any maskable"
         },
         {
-            "src": "/static/img/maskable-512px.png",
+            "src": "https://online-market-1.vercel.app/static/img/maskable-512px.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpuse": "any maskable"
