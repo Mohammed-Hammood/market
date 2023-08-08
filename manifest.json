@@ -11,7 +11,7 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "description": "Online market. Different products",
-    "start_url": "/",
+    "id": "/",
     "icons": [
         {
             "src": "https://online-market-1.vercel.app/static/img/maskable-16px.png",
