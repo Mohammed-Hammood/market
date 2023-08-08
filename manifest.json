@@ -8,10 +8,12 @@
     "short_name": "Market",
     "orientation": "portrait",
     "theme_color": "#1E1E1E",
+    "homepage_url":"/",
     "background_color": "#ffffff",
     "display": "standalone",
     "description": "Online market. Different products",
     "id": "/",
+    "start_url": "https://online-market-1.vercel.app",
     "icons": [
         {
             "src": "https://online-market-1.vercel.app/static/img/maskable-16px.png",
