@@ -10,8 +10,9 @@
 
 ## How to install the application?
 - Clone the application to your locall machine `git clone repository_url`
-- Install the dependances `yarn install`
+- Install the dependances `yarn install` 
 - Run the application `yarn dev`
+- Port should be one of `5173`, `3000`, `3001` to avoid CORS errors.
 
 
 ## How to install the application on mobile devices?
