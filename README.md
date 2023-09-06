@@ -14,7 +14,6 @@
 - Run the application `yarn dev`
 - Port should be one of `5173`, `3000`, `3001` to avoid `CORS` errors.
 
-
 ## How to install the application on mobile devices?
 - Open the https://online-market-1.vercel.app in your browser and install it from options
 
