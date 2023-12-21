@@ -18,6 +18,7 @@
 - Open the https://online-market-1.vercel.app in your browser and install it from options
 
 
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
