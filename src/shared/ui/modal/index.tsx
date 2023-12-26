@@ -113,7 +113,7 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
     </div>
 
     useEffect(() => {
-        document.body.style.overflowY = "hidden"; //to prevent scolling when modal is opened 
+        if(isVisible)document.body.style.overflowY = "hidden"; //to prevent scolling when modal is opened 
 
         const div: HTMLDivElement = document.createElement("div");
 
@@ -126,7 +126,7 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
             document.body.style.overflowY = "auto";
         }
 
-    }, [])
+    }, [isVisible])
 
     return (
         isVisible && container ? createPortal(form, container) : null
