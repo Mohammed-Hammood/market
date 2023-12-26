@@ -19,7 +19,8 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
     const [container, setContainer] = useState<HTMLDivElement | null>(null);
     const [fullScreen, setFullscreen] = useState<boolean>(false);
     const [activeImage, setActiveImage] = useState<string>(product && product.images[0] ? product.images[0] : '');
-    const { theme } = useContext(ThemeContext)
+    const { theme } = useContext(ThemeContext);
+
     const nextProduct = ((): null | Product => {
         const currentProductIndex = products.findIndex(item => product && item.id === product.id)
         if (currentProductIndex !== -1 && products[currentProductIndex + 1]) {
@@ -42,7 +43,8 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
         const el = e.target as HTMLElement
         if (el.id.toString() === 'modalContainer') hideModal();
     }
-    const form = <div
+    const form = (product: Product): JSX.Element =>
+    (<div
         className={styles.modal}
         data-fullscreen={fullScreen}
         onClick={handleModalHide}
@@ -83,37 +85,47 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
                 </div>
             </div>
             <div className={styles.Body}>
-                <div className={styles.title}>{product?.title}</div>
+                <div className={styles.title}>{product.title}</div>
                 <div className={styles.image}>
                     <div className={styles.activeImage}>
                         <img src={activeImage} alt="" />
                     </div>
                     <div className={styles.imagesSlider}>
-                        {product?.images.map((img, i: number) => <img className="image" key={i} onClick={() => setActiveImage(img)} src={img} alt="" />)}
+                        {product.images.map((img, i: number) => (
+                            <img className="image"
+                                key={`${i}_image_${img}`}
+                                onClick={() => setActiveImage(img)}
+                                src={img} alt=""
+                            />
+                        )
+                        )}
                     </div>
                 </div>
                 <div className={styles.price}>
                     <span>Price</span>
-                    <span>{product?.price}</span>
+                    <span>{product.price}</span>
                 </div>
                 <div className={styles.rating}>
                     <span>Rating</span>
-                    <span>{product?.rating}</span>
+                    <span>{product.rating}</span>
                 </div>
                 <div className={styles.discount}>
                     <span>Discount</span>
-                    <span>{product?.discountPercentage}%</span>
+                    <span>{product.discountPercentage}%</span>
                 </div>
                 <div className={styles.description}>
-                    <span>{product?.description}</span>
+                    <span>{product.description}</span>
                 </div>
 
             </div>
         </div>
-    </div>
+    </div>)
 
     useEffect(() => {
-        if(isVisible)document.body.style.overflowY = "hidden"; //to prevent scolling when modal is opened 
+        if (isVisible && product) {
+            document.body.style.overflowY = "hidden"; //to prevent scolling when modal is opened 
+            setActiveImage(product.images[0] ?? '');
+        }
 
         const div: HTMLDivElement = document.createElement("div");
 
@@ -124,11 +136,12 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
         return () => {
             document.body.removeChild(div);
             document.body.style.overflowY = "auto";
+            setActiveImage('');
         }
 
-    }, [isVisible])
+    }, [isVisible, product, setActiveImage])
 
     return (
-        isVisible && container ? createPortal(form, container) : null
+        isVisible && container && product ? createPortal(form(product), container) : null
     )
 }
