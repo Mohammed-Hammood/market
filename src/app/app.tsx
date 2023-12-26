@@ -1,6 +1,6 @@
 import  Navbar  from '@/widgets/ui/Navbar';
 import Routing from '@/pages';
-import "./index.scss";
+import "./styles/index.scss";
 
 
 function App(): JSX.Element {

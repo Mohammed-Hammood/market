@@ -2,7 +2,7 @@ import {  useState, ReactNode } from 'react';
 import { ThemeContext } from './context';
 import { Theme } from '.';
 
-const ThemeProvider = ({ children }: { children: ReactNode }) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const __LocalStorageName__ = 'theme';
 
     const defaultTheme = localStorage.getItem(__LocalStorageName__) as Theme || Theme.LIGHT;
@@ -33,4 +33,3 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     );
 };
 
-export default ThemeProvider;

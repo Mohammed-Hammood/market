@@ -34,7 +34,7 @@ const HomePage = (): JSX.Element => {
 
 
     useEffect(() => {
-        if(products.length === 0)fetchProducts({ setLoading, filters })
+        if (products.length === 0) fetchProducts({ setLoading, filters })
     }, [filters, products]);
 
     return (
@@ -76,15 +76,15 @@ const HomePage = (): JSX.Element => {
                         })}
                 </div>
             </div>
-            {activeProduct ?
-                <Modal
-                    isVisible={true}
-                    hideModal={() => setActiveProduct(null)}
-                    product={activeProduct}
-                    setActiveProduct={setActiveProduct}
-                    products={products}
-                />
-                : null}
+            <Modal
+                {...{
+                    isVisible: activeProduct !== null,
+                    hideModal: () => setActiveProduct(null),
+                    product: activeProduct,
+                    setActiveProduct,
+                    products,
+                }}
+            />
         </main>
     );
 };

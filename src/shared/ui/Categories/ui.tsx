@@ -5,14 +5,14 @@ type Props = {
     setCategory: (value: Category) => void;
 }
 
-const Categories = ({ category, setCategory  }: Props): JSX.Element => {
-    
+const Categories = ({ category, setCategory }: Props): JSX.Element => {
+
     return (
         <div className={styles.selectWrapper}>
             <select
                 className={styles.Select}
                 value={category}
-                onChange={(e)=> setCategory(((e.target as HTMLSelectElement).value) as Category)}
+                onChange={e => setCategory(((e.target as HTMLSelectElement).value) as Category)}
             >
                 <option className={styles.option} value={"all"}>All</option>
                 <option className={styles.option} value={"automotive"}>Automotive</option>

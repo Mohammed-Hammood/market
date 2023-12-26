@@ -1,0 +1,7 @@
+@import "./normalize.scss";
+@import "./fonts.scss";
+@import "./variables.scss";
+@import "./global.scss";
+
+// the order here is important. 
+// normalize, fonts, variables should be always first

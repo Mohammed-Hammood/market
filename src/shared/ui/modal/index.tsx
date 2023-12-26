@@ -11,7 +11,7 @@ type ModalProps = {
     isVisible: boolean;
     hideModal: () => void;
     setActiveProduct: (product: Product | null) => void;
-    product: Product;
+    product: Product | null;
     products: Product[];
 }
 
@@ -67,7 +67,7 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
                         className={clsx(styles.NextBtn, { "disabled": !nextProduct })}
                         onClick={() => {
                             setActiveProduct(nextProduct);
-                            setActiveImage(nextProduct ? nextProduct.images[0] : '')
+                            setActiveImage(nextProduct?.images[0] ?? '')
                         }}
                     >
                         Next
@@ -75,7 +75,7 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
                 </div>
                 <div className={styles.FullscreenCloseButtons}>
                     <button className={styles.FullScreenBtn} onClick={() => setFullscreen(!fullScreen)}>
-                        <ICON name={fullScreen ? "compress-solid": "expand-solid"} color="silver" height="16px" />
+                        <ICON name={fullScreen ? "compress-solid" : "expand-solid"} color="silver" height="16px" />
                     </button>
                     <button className={styles.HeaderCloseBtn} onClick={() => hideModal()}>
                         <ICON name="xmark-solid" color="white" height="16px" />
@@ -83,29 +83,29 @@ export function Modal({ isVisible, hideModal, product, products, setActiveProduc
                 </div>
             </div>
             <div className={styles.Body}>
-                <div className={styles.title}>{product.title}</div>
+                <div className={styles.title}>{product?.title}</div>
                 <div className={styles.image}>
                     <div className={styles.activeImage}>
                         <img src={activeImage} alt="" />
                     </div>
                     <div className={styles.imagesSlider}>
-                        {product.images.map((img, i: number) => <img className="image" key={i} onClick={() => setActiveImage(img)} src={img} alt="" />)}
+                        {product?.images.map((img, i: number) => <img className="image" key={i} onClick={() => setActiveImage(img)} src={img} alt="" />)}
                     </div>
                 </div>
                 <div className={styles.price}>
                     <span>Price</span>
-                    <span>{product.price}</span>
+                    <span>{product?.price}</span>
                 </div>
                 <div className={styles.rating}>
                     <span>Rating</span>
-                    <span>{product.rating}</span>
+                    <span>{product?.rating}</span>
                 </div>
                 <div className={styles.discount}>
                     <span>Discount</span>
-                    <span>{product.discountPercentage}%</span>
+                    <span>{product?.discountPercentage}%</span>
                 </div>
                 <div className={styles.description}>
-                    <span>{product.description}</span>
+                    <span>{product?.description}</span>
                 </div>
 
             </div>

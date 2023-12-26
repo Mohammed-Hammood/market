@@ -8,7 +8,7 @@ type Props = {
 const LimitSelector = ({ setLimit, limit }: Props) => {
 
     return (
-        <div className={(styles.selectWrapper)}>
+        <div className={styles.selectWrapper}>
             <select
                 className={styles.selectNumber}
                 value={limit}
