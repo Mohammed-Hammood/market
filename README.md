@@ -5,6 +5,7 @@
 - The application deployed on [https://online-market-1.vercel.app](https://online-market-1.vercel.app)
 
 
+
 ### Stack
 - `Backend` NodeJs, Express
 - `Frontend` React, TypeScript, Effector
