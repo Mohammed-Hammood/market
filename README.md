@@ -7,7 +7,7 @@
 
 ### Stack
 - `Backend` NodeJs, Express
-- `Frontend` React, TypeScript, Effector, clsx, Sass, Nodejs
+- `Frontend` React, TypeScript, Effector, clsx, Sass, Nodejs, JavaScript
 
 ## How to install the application?
 - Clone the application to your locall machine `git clone repository_url`
